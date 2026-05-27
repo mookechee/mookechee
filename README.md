@@ -31,16 +31,6 @@ style     cute console energy, practical systems work
 | --- | --- | --- |
 | Driver validation, motion & sensor data integrity, long-running stability | Evidence capture, structured logs, reports, charts, repeatable test flows | Android/Linux bring-up, HomeKit devices, protocol study, firmware analysis |
 
-## Featured Builds
-
-| Build | Status Screen |
-| --- | --- |
-| **casepilot** | Claude Code plugin that turns Feishu / Lark requirement docs into Markmap test-case mind maps with coverage checks and quality review. |
-| **Robotic Hand SDK / ROS2** | Python bindings, C++ core work, ROS2 driver integration, launch flows, docs, examples, and real hardware validation for dexterous-hand devices. |
-| **Robotic-hand stability tester** | Long-running communication validation: discovery, reconnect recovery, `joint_state` continuity, tactile data availability, event logs, charts, and Markdown reports. |
-| **iQOO Z1 LineageOS** | Android 11 bring-up workspace for vivo PD1986. Device tree, vendor integration, kernel work, reference-device comparison, and careful compatibility research. |
-| **GK01 HomeKit** | Turning a Geeklink GK01 IR remote into a native Apple Home AC controller on ESP8266. HomeKit pairing, IR protocol study, firmware analysis, and practical home automation. |
-
 ## Toolbox
 
 <p align="center">
