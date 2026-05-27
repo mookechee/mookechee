@@ -27,9 +27,9 @@ style     cute console energy, practical systems work
 
 ## Bench
 
-| Robotics QA | Quality Infra | Device Research |
+| Robotics QA | Device Research | Quality Infra |
 | --- | --- | --- |
-| Driver validation, motion & sensor data integrity, long-running stability | Evidence capture, structured logs, reports, charts, repeatable test flows | Android/Linux bring-up, HomeKit devices, protocol study, firmware analysis |
+| Driver validation, motion & sensor data integrity, long-running stability | Android/Linux bring-up, HomeKit devices, protocol study, firmware analysis | Evidence capture, structured logs, reports, charts, repeatable test flows |
 
 ## Toolbox
 
