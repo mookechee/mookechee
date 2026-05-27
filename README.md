@@ -25,7 +25,7 @@ habit     make the device talk, make the log useful
 style     cute console energy, practical systems work
 ```
 
-## Signal Board
+## Bench
 
 | Robotics QA | Test automation | Device research |
 | --- | --- | --- |
