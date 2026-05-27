@@ -29,7 +29,7 @@ style     cute console energy, practical systems work
 
 | Robotics QA | Device Research | Quality Infra |
 | --- | --- | --- |
-| Driver validation, motion & sensor data integrity, long-running stability | Android/Linux bring-up, HomeKit devices, protocol study, firmware analysis | Evidence capture, structured logs, reports, charts, repeatable test flows |
+| Driver validation, motion & sensor data integrity, long-running stability | Android/Linux bring-up, HomeKit devices, protocol study, firmware analysis | Quality Platform, pipelines, LLM-driven toolchain |
 
 ## Toolbox
 
