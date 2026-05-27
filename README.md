@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2600&pause=900&color=10B981&center=true&vCenter=true&width=850&lines=Turning+noisy+hardware+into+clean+reports...;Android+bring-up%2C+HomeKit+remotes%2C+robotic-hand+test+rigs.;I+like+systems+that+fight+back+a+little." alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2600&pause=900&color=10B981&center=true&vCenter=true&width=850&lines=Turning+noisy+hardware+into+clean+reports...;ROS2+drivers%2C+Android+bring-up%2C+embedded+firmware%2C+LLM+QA+pipelines.;I+like+systems+that+fight+back+a+little." alt="Typing SVG" />
 </p>
 
 ---
