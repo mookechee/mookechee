@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&height=220&section=header&text=mookechee&fontSize=72&fontAlignY=36&desc=Hardware%20QA%20%2F%20Robotics%20Tooling%20%2F%20LLM%20Workflows&descAlignY=58&descSize=18&fontColor=ffffff&color=0:0f172a,35:2563eb,70:f97316,100:10b981&animation=fadeIn" alt="mookechee profile header" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=220&section=header&text=mookechee&fontSize=72&fontAlignY=36&desc=Robotics%20QA%20%2F%20Device%20Research%20%2F%20Quality%20Infra&descAlignY=58&descSize=18&fontColor=ffffff&color=0:0f172a,35:2563eb,70:f97316,100:10b981&animation=fadeIn" alt="mookechee profile header" />
 
 <p align="center">
   <a href="mailto:76271502+mookechee@users.noreply.github.com">
@@ -76,8 +76,4 @@ style     cute console energy, practical systems work
 
 ---
 
-<p align="center">
-  <sub>Noisy hardware, clean reports.</sub>
-</p>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&height=95&section=footer&color=0:10b981,35:f97316,70:2563eb,100:0f172a" alt="profile footer" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=95&section=footer&desc=Noisy%20hardware%2C%20clean%20reports.&descAlignY=60&descSize=14&fontColor=ffffff&color=0:10b981,35:f97316,70:2563eb,100:0f172a" alt="profile footer" />
