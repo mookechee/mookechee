@@ -29,7 +29,7 @@ style     cute console energy, practical systems work
 
 | Robotics QA | Device Research | Quality Infra |
 | --- | --- | --- |
-| Hand SDK, ROS2 integration, sensor & stability validation | Android/Linux bring-up, Protocol, Firmware | Quality Platform, Pipelines, LLM-driven toolchain |
+| ROS2 driver conformance, sensor pipeline, motion stability | Android/Linux bring-up, Protocol, Firmware | Quality Platform, Pipelines, LLM-driven toolchain |
 
 ## Toolbox
 
