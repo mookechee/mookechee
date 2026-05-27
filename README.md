@@ -60,8 +60,8 @@ style     cute console energy, practical systems work
 ## GitHub
 
 <p align="center">
-  <img width="340" height="200" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=mookechee&theme=github_dark" alt="GitHub stats" />
-  <img width="340" height="200" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=mookechee&theme=github_dark" alt="Top languages" />
+  <img width="340" height="200" src="https://raw.githubusercontent.com/mookechee/mookechee/output/stats.svg" alt="GitHub stats" />
+  <img width="340" height="200" src="https://raw.githubusercontent.com/mookechee/mookechee/output/lang.svg" alt="Top languages" />
 </p>
 
 ## Contribution Trace
