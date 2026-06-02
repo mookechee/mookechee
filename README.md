@@ -76,4 +76,4 @@ style     cute console energy, practical systems work
 
 ---
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=95&section=footer&desc=Noisy%20hardware%2C%20clean%20reports.&descAlignY=60&descSize=14&fontColor=ffffff&color=0:10b981,35:f97316,70:2563eb,100:0f172a" alt="profile footer" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=145&section=footer&desc=Noisy%20hardware%2C%20clean%20reports.&descAlignY=62&descSize=32&fontFamily=Maple%20Mono%2Cui-monospace%2CSFMono-Regular%2CMenlo%2CConsolas%2Cmonospace&fontColor=e5f3ff&color=0:020617,35:0f172a,68:0f766e,100:2563eb" alt="profile footer" />
