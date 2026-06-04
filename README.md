@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2600&pause=900&color=10B981&center=true&vCenter=true&width=850&lines=ROS2+drivers%2C+device+bring-up%2C+LLM-assisted+QA.;Make+the+device+talk%2C+make+the+log+useful." alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2600&pause=900&color=10B981&center=true&vCenter=true&width=850&lines=Robotics+quality+infrastructure%2C+device+systems%2C+and+AI-assisted+validation.;Make+the+device+talk%2C+make+the+log+useful." alt="Typing SVG" />
 </p>
 
 ---
