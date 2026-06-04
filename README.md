@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&height=220&section=header&text=mookechee&fontSize=72&fontAlignY=36&desc=Robotics%20QA%20%2F%20Device%20Research%20%2F%20Quality%20Infra&descAlignY=58&descSize=18&fontColor=ffffff&color=0:0f172a,35:2563eb,70:f97316,100:10b981&animation=fadeIn" alt="mookechee profile header" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=220&section=header&text=mookechee&fontSize=72&fontAlignY=36&desc=Quality%20infra%20for%20robot%20systems&descAlignY=58&descSize=18&fontColor=ffffff&fontFamily=Maple%20Mono%2Cui-monospace%2CSFMono-Regular%2CMenlo%2CConsolas%2Cmonospace&color=0:0f172a,35:2563eb,70:f97316,100:10b981&animation=fadeIn" alt="mookechee profile header" />
 
 <p align="center">
   <a href="mailto:76271502+mookechee@users.noreply.github.com">
@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2600&pause=900&color=10B981&center=true&vCenter=true&width=850&lines=Turning+noisy+hardware+into+clean+reports...;ROS2+Drivers%2C+Android+Bring-up%2C+Embedded+Firmware%2C+LLM+QA+Pipelines.;I+like+systems+that+fight+back+a+little." alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2600&pause=900&color=10B981&center=true&vCenter=true&width=850&lines=ROS2+drivers%2C+device+bring-up%2C+LLM-assisted+QA.;Make+the+device+talk%2C+make+the+log+useful." alt="Typing SVG" />
 </p>
 
 ---
@@ -19,17 +19,17 @@
 ```text
 > boot profile --user mookechee
 
-role      QA engineer @ Wuji Technology
-bench     robotic hands, Android, embedded devices, LLM QA
+role      Robotics Infrastructure Engineer
+focus     quality infra for robot systems
+bench     ROS2 drivers, robotic hands, Android/Linux, embedded
 habit     make the device talk, make the log useful
-style     cute console energy, practical systems work
 ```
 
 ## Bench
 
-| Robotics QA | Device Research | Quality Infra |
-| --- | --- | --- |
-| ROS2 driver stack, Sensor pipeline, Motion control | Android/Linux bring-up, Protocol, Firmware | Quality Platform, Pipelines, LLM-driven toolchain |
+| Robot System Validation | Device Research Bench |
+| --- | --- |
+| ROS2 driver stack, joint-state, control-interface, multi-hand, RViz | Android/Linux, embedded firmware, protocol, bring-up notes |
 
 ## Toolbox
 
