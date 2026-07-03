@@ -7,7 +7,7 @@
   <a href="https://github.com/mookechee">
     <img src="https://img.shields.io/badge/GitHub-mookechee-111827?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
-  <img src="https://img.shields.io/badge/Shanghai-UTC%2B8-10B981?style=for-the-badge" alt="Shanghai UTC+8" />
+  <img src="https://img.shields.io/static/v1?label=Singapore&message=SGT%20UTC%2B8&color=10B981&style=for-the-badge" alt="Singapore SGT UTC+8" />
 </p>
 
 <p align="center">
