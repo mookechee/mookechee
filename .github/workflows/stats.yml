@@ -11,6 +11,11 @@ on:
 permissions:
   contents: write
 
+# Shared with snake.yml so the two output-branch deploys never race.
+concurrency:
+  group: output-branch-deploy
+  cancel-in-progress: false
+
 jobs:
   generate:
     runs-on: ubuntu-latest
