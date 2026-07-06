@@ -59,20 +59,6 @@ habit     make the device talk, make the log useful
 ## Open Source Contributions
 
 <p align="center">
-  <a href="https://github.com/anomalyco/models.dev">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=anomalyco&repo=models.dev&bg_color=020617&title_color=2dd4bf&text_color=10b981&icon_color=10b981&border_color=064e3b" alt="models.dev" />
-  </a>
-  <a href="https://github.com/wuji-technology/wujihandpy">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=wuji-technology&repo=wujihandpy&bg_color=020617&title_color=2dd4bf&text_color=10b981&icon_color=10b981&border_color=064e3b" alt="wujihandpy" />
-  </a>
-</p>
-<p align="center">
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Ji4n1ng&repo=OpenInTerminal&bg_color=020617&title_color=2dd4bf&text_color=10b981&icon_color=10b981&border_color=064e3b" alt="OpenInTerminal" />
-  </a>
-</p>
-
-<p align="center">
   <img width="340" height="200" src="https://raw.githubusercontent.com/mookechee/mookechee/output/contribs.svg" alt="Top contributed repositories by stars" />
 </p>
 
