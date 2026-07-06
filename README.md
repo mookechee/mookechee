@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&height=220&section=header&text=mookechee&fontSize=72&fontAlignY=36&desc=Quality%20infra%20for%20robot%20systems&descAlignY=58&descSize=18&fontColor=ffffff&fontFamily=Maple%20Mono%2Cui-monospace%2CSFMono-Regular%2CMenlo%2CConsolas%2Cmonospace&color=0:0f172a,35:2563eb,70:f97316,100:10b981&animation=fadeIn" alt="mookechee profile header" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=220&section=header&text=mookechee&fontSize=72&fontAlignY=36&desc=Building%20robust%20foundations%20for%20robotics.&descAlignY=58&descSize=18&fontColor=ffffff&fontFamily=Maple%20Mono%2Cui-monospace%2CSFMono-Regular%2CMenlo%2CConsolas%2Cmonospace&color=0:020617,35:064e3b,70:10b981,100:2dd4bf&animation=fadeIn" alt="mookechee profile header" />
 
 <p align="center">
   <a href="mailto:76271502+mookechee@users.noreply.github.com">
@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2600&pause=900&color=10B981&center=true&vCenter=true&width=850&lines=Robotics+quality+infrastructure%2C+device+systems%2C+and+AI-assisted+validation.;Make+the+device+talk%2C+make+the+log+useful." alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2600&pause=900&color=10B981&center=true&vCenter=true&width=850&lines=ROS2+%26+Hardware+Bring-up;Android+%2F+Linux+Systems;Data-driven+Validation" alt="Typing SVG" />
 </p>
 
 ---
@@ -20,16 +20,15 @@
 > boot profile --user mookechee
 
 role      Robotics Infrastructure Engineer
-focus     quality infra for robot systems
-bench     ROS2 drivers, robotic hands, Android/Linux, embedded
+stack     ROS2, C++, Python, Android/Linux, Embedded
 habit     make the device talk, make the log useful
 ```
 
-## Bench
+## Engineering Focus
 
-| Robot System Validation | Device Research Bench |
+| Robotics & Control | Embedded & Systems |
 | --- | --- |
-| ROS2 driver stack, joint-state, control-interface, multi-hand, RViz | Android/Linux, embedded firmware, protocol, bring-up notes |
+| Developing ROS2 driver stacks, control interfaces, and multi-device sync. | Hardware bring-up, custom Android/Linux builds, and firmware protocols. |
 
 ## Toolbox
 
@@ -57,6 +56,12 @@ habit     make the device talk, make the log useful
   <img src="https://img.shields.io/badge/Markmap-0F766E?style=for-the-badge&logo=markdown&logoColor=white" alt="Markmap" />
 </p>
 
+## Open Source Contributions
+
+<p align="center">
+  <img width="340" height="200" src="https://raw.githubusercontent.com/mookechee/mookechee/output/contribs.svg" alt="Top contributed repositories by stars" />
+</p>
+
 ## GitHub
 
 <p align="center">
@@ -76,4 +81,4 @@ habit     make the device talk, make the log useful
 
 ---
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=145&section=footer&desc=Noisy%20hardware%2C%20clean%20reports.&descAlignY=62&descSize=32&fontFamily=Maple%20Mono%2Cui-monospace%2CSFMono-Regular%2CMenlo%2CConsolas%2Cmonospace&fontColor=e5f3ff&color=0:020617,35:0f172a,68:0f766e,100:2563eb" alt="profile footer" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=145&section=footer&desc=Noisy%20hardware%2C%20clean%20reports.&descAlignY=62&descSize=32&fontFamily=Maple%20Mono%2Cui-monospace%2CSFMono-Regular%2CMenlo%2CConsolas%2Cmonospace&fontColor=e5f3ff&color=0:020617,35:064e3b,70:10b981,100:2dd4bf" alt="profile footer" />
