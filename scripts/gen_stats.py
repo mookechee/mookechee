@@ -44,19 +44,47 @@ LANG_COLORS = {
 }
 
 
-def gh_api(path, paginate=False):
-    args = ["gh", "api", "--jq", ".", path]
-    if paginate:
-        args.insert(2, "--paginate")
-    result = subprocess.run(args, capture_output=True, text=True)
+def run_gh(args):
+    result = subprocess.run(["gh", "api", *args], capture_output=True, text=True)
     if result.returncode != 0:
-        print(f"gh api error: {result.stderr}", file=sys.stderr)
-        sys.exit(1)
+        raise RuntimeError(f"gh api error: {result.stderr}")
+    return result.stdout
+
+
+def gh_api(path, paginate=False):
+    args = ["--jq", ".", path]
+    if paginate:
+        args.insert(0, "--paginate")
+    stdout = run_gh(args)
     try:
-        return json.loads(result.stdout)
+        return json.loads(stdout)
     except json.JSONDecodeError:
-        lines = [json.loads(line) for line in result.stdout.strip().split("\n") if line.strip()]
+        lines = [json.loads(line) for line in stdout.strip().split("\n") if line.strip()]
         return lines
+
+
+def gh_graphql(query):
+    return json.loads(run_gh(["graphql", "-f", f"query={query}"]))
+
+
+def esc(text):
+    return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def fmt_stars(n):
+    if n >= 1_000_000:
+        return f"{n / 1_000_000:.1f}M".replace(".0M", "M")
+    if n >= 1000:
+        return f"{n / 1000:.1f}k".replace(".0k", "k")
+    return str(n)
+
+
+def svg_card(title, body):
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="340" height="200" viewBox="0 0 340 200">
+  <style>*{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}}</style>
+  <rect width="340" height="200" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="25" y="40" font-size="16" font-weight="bold" fill="#58a6ff">{title}</text>
+{body}</svg>"""
 
 
 def gen_stats():
@@ -77,11 +105,7 @@ def gen_stats():
 """
         y += 30
 
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="340" height="200" viewBox="0 0 340 200">
-  <style>*{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}}</style>
-  <rect width="340" height="200" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
-  <text x="25" y="40" font-size="16" font-weight="bold" fill="#58a6ff">GitHub Stats</text>
-{rows}</svg>"""
+    return svg_card("GitHub Stats", rows)
 
 
 def gen_langs():
@@ -98,12 +122,10 @@ def gen_langs():
 
     entries = sorted(lang_count.items(), key=lambda x: -x[1])[:8]
     if not entries:
-        return f"""<svg xmlns="http://www.w3.org/2000/svg" width="340" height="200" viewBox="0 0 340 200">
-  <style>*{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}}</style>
-  <rect width="340" height="200" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
-  <text x="25" y="40" font-size="16" font-weight="bold" fill="#58a6ff">Top Languages</text>
-  <text x="25" y="100" font-size="14" fill="#8b949e">No public repos with detected language</text>
-</svg>"""
+        return svg_card(
+            "Top Languages",
+            '  <text x="25" y="100" font-size="14" fill="#8b949e">No public repos with detected language</text>\n',
+        )
     total = sum(v for _, v in entries)
 
     rows = ""
@@ -117,20 +139,66 @@ def gen_langs():
 """
         y += 24
 
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="340" height="200" viewBox="0 0 340 200">
-  <style>*{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}}</style>
-  <rect width="340" height="200" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
-  <text x="25" y="40" font-size="16" font-weight="bold" fill="#58a6ff">Top Languages</text>
-{rows}</svg>"""
+    return svg_card("Top Languages", rows)
+
+
+def gen_contribs():
+    query = f"""query {{
+      user(login: "{USERNAME}") {{
+        repositoriesContributedTo(
+          first: 100
+          includeUserRepositories: false
+          contributionTypes: [COMMIT, PULL_REQUEST, ISSUE, PULL_REQUEST_REVIEW]
+          orderBy: {{field: STARGAZERS, direction: DESC}}
+          privacy: PUBLIC
+        ) {{
+          nodes {{ nameWithOwner stargazerCount }}
+        }}
+      }}
+    }}"""
+    data = gh_graphql(query)
+    user = (data.get("data") or {}).get("user") or {}
+    nodes = (user.get("repositoriesContributedTo") or {}).get("nodes") or []
+    # The API does not reliably honor orderBy STARGAZERS, so sort client-side.
+    entries = sorted(
+        ((n["nameWithOwner"], n["stargazerCount"]) for n in nodes if n),
+        key=lambda x: -x[1],
+    )[:5]
+
+    if not entries:
+        return svg_card(
+            "Contributing To",
+            '  <text x="25" y="100" font-size="14" fill="#8b949e">No public contributions found</text>\n',
+        )
+
+    rows = ""
+    y = 65
+    for name, stars in entries:
+        if len(name) > 28:
+            name = name[:27] + "…"
+        rows += f"""  <text x="25" y="{y + 12}" font-size="13" fill="#c9d1d9">{esc(name)}</text>
+  <text x="315" y="{y + 12}" font-size="13" fill="#8b949e" text-anchor="end">★ {fmt_stars(stars)}</text>
+"""
+        y += 24
+
+    return svg_card("Contributing To", rows)
 
 
 def main():
     os.makedirs("dist", exist_ok=True)
-    with open("dist/stats.svg", "w") as f:
+    with open("dist/stats.svg", "w", encoding="utf-8") as f:
         f.write(gen_stats())
-    with open("dist/lang.svg", "w") as f:
+    with open("dist/lang.svg", "w", encoding="utf-8") as f:
         f.write(gen_langs())
-    print("Stats and lang SVGs generated.")
+    try:
+        contribs = gen_contribs()
+    except Exception as e:
+        # A contribs failure must not block deploying stats/lang.
+        print(f"contribs generation failed, skipping: {e}", file=sys.stderr)
+    else:
+        with open("dist/contribs.svg", "w", encoding="utf-8") as f:
+            f.write(contribs)
+    print("Stats, lang and contribs SVGs generated.")
 
 
 if __name__ == "__main__":
