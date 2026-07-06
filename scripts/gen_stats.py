@@ -63,10 +63,6 @@ def gh_api(path, paginate=False):
         return lines
 
 
-def gh_graphql(query):
-    return json.loads(run_gh(["graphql", "-f", f"query={query}"]))
-
-
 def esc(text):
     return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
@@ -143,27 +139,29 @@ def gen_langs():
 
 
 def gen_contribs():
-    query = f"""query {{
-      user(login: "{USERNAME}") {{
-        repositoriesContributedTo(
-          first: 100
-          includeUserRepositories: false
-          contributionTypes: [COMMIT, PULL_REQUEST, ISSUE, PULL_REQUEST_REVIEW]
-          orderBy: {{field: STARGAZERS, direction: DESC}}
-          privacy: PUBLIC
-        ) {{
-          nodes {{ nameWithOwner stargazerCount }}
-        }}
-      }}
-    }}"""
-    data = gh_graphql(query)
-    user = (data.get("data") or {}).get("user") or {}
-    nodes = (user.get("repositoriesContributedTo") or {}).get("nodes") or []
-    # The API does not reliably honor orderBy STARGAZERS, so sort client-side.
-    entries = sorted(
-        ((n["nameWithOwner"], n["stargazerCount"]) for n in nodes if n),
-        key=lambda x: -x[1],
-    )[:5]
+    # Only merged PRs count as contributions — not issues, reviews, or open PRs.
+    pr_counts = {}
+    page = 1
+    while True:
+        data = gh_api(
+            f"search/issues?q=is:pr+author:{USERNAME}+is:merged&per_page=100&page={page}"
+        )
+        items = data.get("items", [])
+        for item in items:
+            repo = item["repository_url"].split("/repos/")[-1]
+            if repo.split("/")[0].lower() == USERNAME.lower():
+                continue
+            pr_counts[repo] = pr_counts.get(repo, 0) + 1
+        if len(items) < 100 or page >= 10:
+            break
+        page += 1
+
+    repos = []
+    for name in pr_counts:
+        info = gh_api(f"repos/{name}")
+        if not info.get("private"):
+            repos.append((info["full_name"], info["stargazers_count"]))
+    entries = sorted(repos, key=lambda x: -x[1])[:5]
 
     if not entries:
         return svg_card(
@@ -195,10 +193,11 @@ def main():
     except Exception as e:
         # A contribs failure must not block deploying stats/lang.
         print(f"contribs generation failed, skipping: {e}", file=sys.stderr)
+        print("Stats and lang SVGs generated (contribs skipped).")
     else:
         with open("dist/contribs.svg", "w", encoding="utf-8") as f:
             f.write(contribs)
-    print("Stats, lang and contribs SVGs generated.")
+        print("Stats, lang and contribs SVGs generated.")
 
 
 if __name__ == "__main__":

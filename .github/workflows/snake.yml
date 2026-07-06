@@ -11,6 +11,12 @@ on:
 permissions:
   contents: write
 
+# Shared with stats.yml so the two output-branch deploys never race.
+concurrency:
+  group: output-branch-deploy
+  cancel-in-progress: false
+  queue: max
+
 jobs:
   generate:
     runs-on: ubuntu-latest
