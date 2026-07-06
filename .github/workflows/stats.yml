@@ -15,6 +15,7 @@ permissions:
 concurrency:
   group: output-branch-deploy
   cancel-in-progress: false
+  queue: max
 
 jobs:
   generate:
