@@ -193,10 +193,11 @@ def main():
     except Exception as e:
         # A contribs failure must not block deploying stats/lang.
         print(f"contribs generation failed, skipping: {e}", file=sys.stderr)
+        print("Stats and lang SVGs generated (contribs skipped).")
     else:
         with open("dist/contribs.svg", "w", encoding="utf-8") as f:
             f.write(contribs)
-    print("Stats, lang and contribs SVGs generated.")
+        print("Stats, lang and contribs SVGs generated.")
 
 
 if __name__ == "__main__":
